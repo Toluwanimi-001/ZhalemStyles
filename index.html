@@ -1,0 +1,3825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZhalemStyles</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --lv-brown: #906c4a;
+            --lv-dark: #1a1a1a;
+            --lv-gold: #d4af37;
+            --lv-cream: #f5f5f0;
+            --lv-light: #f9f6f4;
+            --lv-white: #ffffff;
+            --lv-text: #333333;
+            --lv-text-light: #777777;
+            --shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --border-radius: 0px;
+            --section-padding: 120px 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.7;
+            color: var(--lv-text);
+            background-color: var(--lv-cream);
+            overflow-x: hidden;
+            font-weight: 300;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            font-weight: 300;
+        }
+
+        h2 {
+            font-size: 3.2rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+            font-weight: 300;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 1px;
+            background-color: var(--lv-gold);
+            transition: var(--transition);
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section {
+            padding: var(--section-padding);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+            background-color: transparent;
+            color: var(--lv-dark);
+            border: 1px solid var(--lv-dark);
+            border-radius: 0;
+            font-weight: 400;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--lv-dark);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .btn:hover {
+            color: var(--lv-white);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn:hover:before {
+            left: 0;
+        }
+
+        .btn-accent {
+            background-color: var(--lv-gold);
+            color: var(--lv-dark);
+            border: 1px solid var(--lv-gold);
+        }
+
+        .btn-accent:before {
+            background: var(--lv-brown);
+        }
+
+        .btn-light {
+            background-color: transparent;
+            color: var(--lv-white);
+            border: 1px solid var(--lv-white);
+        }
+
+        .btn-light:before {
+            background: var(--lv-white);
+        }
+
+        .btn-light:hover {
+            color: var(--lv-dark);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-header p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--lv-text-light);
+            font-size: 1.1rem;
+        }
+
+        @keyframes fadeInLuxury {
+            0% { 
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+            100% { 
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes slideInUpLuxury {
+            from {
+                opacity: 0;
+                transform: translateY(80px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeftLuxury {
+            from {
+                opacity: 0;
+                transform: translateX(-80px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRightLuxury {
+            from {
+                opacity: 0;
+                transform: translateX(80px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes pulseLuxury {
+            0% { 
+                transform: scale(1);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+            50% { 
+                transform: scale(1.03);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            }
+            100% { 
+                transform: scale(1);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        @keyframes textReveal {
+            0% {
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            }
+            100% {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+
+        @keyframes imageReveal {
+            0% {
+                clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+            }
+            100% {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+
+        @keyframes goldShine {
+            0% {
+                background-position: -100% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        @keyframes borderGlow {
+            0% {
+                box-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
+            }
+            100% {
+                box-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+            }
+        }
+
+        .animate-fadeInLuxury {
+            animation: fadeInLuxury 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+        }
+
+        .animate-slideInUpLuxury {
+            animation: slideInUpLuxury 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+        }
+
+        .animate-slideInLeftLuxury {
+            animation: slideInLeftLuxury 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+        }
+
+        .animate-slideInRightLuxury {
+            animation: slideInRightLuxury 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-pulseLuxury {
+            animation: pulseLuxury 4s ease-in-out infinite;
+        }
+
+        .animate-textReveal {
+            animation: textReveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+        }
+
+        .animate-imageReveal {
+            animation: imageReveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+        }
+
+        .stagger-animation > * {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .stagger-animation.animated > * {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .stagger-animation.animated > *:nth-child(1) { transition-delay: 0.1s; }
+        .stagger-animation.animated > *:nth-child(2) { transition-delay: 0.2s; }
+        .stagger-animation.animated > *:nth-child(3) { transition-delay: 0.3s; }
+        .stagger-animation.animated > *:nth-child(4) { transition-delay: 0.4s; }
+        .stagger-animation.animated > *:nth-child(5) { transition-delay: 0.5s; }
+        .stagger-animation.animated > *:nth-child(6) { transition-delay: 0.6s; }
+        .stagger-animation.animated > *:nth-child(7) { transition-delay: 0.7s; }
+        .stagger-animation.animated > *:nth-child(8) { transition-delay: 0.8s; }
+
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--lv-cream);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        .loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .luxury-loader {
+            width: 80px;
+            height: 80px;
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .luxury-loader:before, .luxury-loader:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px solid transparent;
+            border-top-color: var(--lv-gold);
+            border-radius: 50%;
+            animation: spin 1.5s linear infinite;
+        }
+
+        .luxury-loader:after {
+            border-top-color: var(--lv-brown);
+            animation: spin 2s linear infinite;
+        }
+
+        .loading-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            color: var(--lv-dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loading-text:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--lv-gold), transparent);
+            animation: goldShine 2s infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--lv-gold);
+            color: var(--lv-dark);
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            border: none;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            background-color: var(--lv-brown);
+            color: var(--lv-white);
+            transform: translateY(-5px);
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            transition: var(--transition);
+            padding: 15px 0;
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: var(--lv-dark);
+            letter-spacing: 3px;
+            position: relative;
+        }
+
+        .nav-logo span {
+            color: var(--lv-gold);
+        }
+
+        .nav-logo:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--lv-gold);
+            transition: var(--transition);
+        }
+
+        .nav-logo:hover:after {
+            width: 100%;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .nav-link {
+            font-weight: 400;
+            position: relative;
+            padding: 5px 0;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--lv-gold);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-icon {
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-icon:hover {
+            color: var(--lv-gold);
+            transform: translateY(-2px);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--lv-gold);
+            color: var(--lv-dark);
+            font-size: 0.7rem;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .search-container {
+            position: relative;
+        }
+
+        .search-box {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 300px;
+            background-color: var(--lv-white);
+            border-radius: 0;
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            z-index: 100;
+            border-top: 2px solid var(--lv-gold);
+        }
+
+        .search-box.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #eee;
+            border-radius: 0;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 15px;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .search-input:focus {
+            border-color: var(--lv-gold);
+            outline: none;
+        }
+
+        .search-results {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .search-result-item {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .search-result-item:hover {
+            background-color: var(--lv-cream);
+            padding-left: 20px;
+        }
+
+        .search-result-item:last-child {
+            border-bottom: none;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            width: 30px;
+            height: 20px;
+            position: relative;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 2px;
+            width: 100%;
+            background-color: var(--lv-dark);
+            border-radius: 0;
+            transition: var(--transition);
+            position: absolute;
+            left: 0;
+        }
+
+        .hamburger span:nth-child(1) {
+            top: 0;
+        }
+
+        .hamburger span:nth-child(2) {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .hamburger span:nth-child(3) {
+            bottom: 0;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg);
+            top: 50%;
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg);
+            bottom: 40%;
+        }
+
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--lv-white);
+            overflow: hidden;
+            background: transparent;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 0 40px;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 5.5rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInLuxury 1.5s ease 0.5s forwards;
+            font-weight: 300;
+            letter-spacing: 3px;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeInLuxury 1.5s ease 0.8s forwards;
+            font-weight: 300;
+            letter-spacing: 1px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            opacity: 0;
+            animation: fadeInLuxury 1.5s ease 1.1s forwards;
+        }
+
+        .collections {
+            background-color: var(--lv-white);
+            position: relative;
+        }
+
+        .collection-categories {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 12px 30px;
+            background-color: transparent;
+            border: 1px solid var(--lv-text-light);
+            border-radius: 0;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+        }
+
+        .category-btn.active, .category-btn:hover {
+            background-color: var(--lv-dark);
+            color: var(--lv-white);
+            border-color: var(--lv-dark);
+            transform: translateY(-3px);
+        }
+
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .collection-item {
+            background-color: var(--lv-white);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            opacity: 0;
+            transform: translateY(40px);
+            border: 1px solid #f0f0f0;
+        }
+
+        .collection-item.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .collection-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            animation: borderGlow 3s infinite;
+        }
+
+        .collection-img {
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .collection-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .collection-item:hover .collection-img img {
+            transform: scale(1.1);
+        }
+
+        .collection-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--lv-gold);
+            color: var(--lv-dark);
+            padding: 8px 15px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .collection-info {
+            padding: 2rem;
+            position: relative;
+        }
+
+        .collection-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            font-weight: 400;
+        }
+
+        .collection-info p {
+            color: var(--lv-text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .size-selection {
+            margin-bottom: 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s ease, margin-bottom 0.6s ease;
+        }
+
+        .collection-item.active .size-selection {
+            max-height: 120px;
+            margin-bottom: 1.5rem;
+        }
+
+        .size-selection label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 400;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .size-options {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .size-option {
+            padding: 8px 15px;
+            border: 1px solid #ddd;
+            background-color: var(--lv-white);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .size-option:hover {
+            border-color: var(--lv-gold);
+            transform: translateY(-2px);
+        }
+
+        .size-option.selected {
+            background-color: var(--lv-gold);
+            color: var(--lv-dark);
+            border-color: var(--lv-gold);
+        }
+
+        .size-option.out-of-stock {
+            background-color: #f5f5f5;
+            color: #999;
+            cursor: not-allowed;
+            text-decoration: line-through;
+        }
+
+        .collection-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: opacity 0.6s ease, max-height 0.6s ease;
+        }
+
+        .collection-item.active .collection-price {
+            opacity: 1;
+            max-height: 100px;
+        }
+
+        .price {
+            font-weight: 500;
+            font-size: 1.3rem;
+            color: var(--lv-dark);
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: var(--lv-text-light);
+            font-size: 0.9rem;
+            margin-left: 8px;
+        }
+
+        .featured {
+            background-color: var(--lv-cream);
+            position: relative;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .featured-card {
+            background-color: var(--lv-white);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(40px);
+            border: 1px solid #f0f0f0;
+        }
+
+        .featured-card.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .featured-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .featured-img {
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .featured-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .featured-card:hover .featured-img img {
+            transform: scale(1.1);
+        }
+
+        .featured-content {
+            padding: 2rem;
+        }
+
+        .featured-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            font-weight: 400;
+        }
+
+        .featured-content p {
+            color: var(--lv-text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .carousel-section {
+            background-color: var(--lv-dark);
+            color: var(--lv-white);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-section h2 {
+            color: var(--lv-white);
+            margin-bottom: 4rem;
+        }
+
+        .carousel-section h2:after {
+            background-color: var(--lv-gold);
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .carousel-img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+        }
+
+        .carousel-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: var(--lv-white);
+            padding: 3rem;
+        }
+
+        .carousel-content h3 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .carousel-content p {
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        .carousel-btn {
+            background-color: var(--lv-gold);
+            color: var(--lv-dark);
+            border: 1px solid var(--lv-gold);
+        }
+
+        .carousel-btn:hover {
+            background-color: transparent;
+            color: var(--lv-white);
+            border: 1px solid var(--lv-white);
+        }
+
+        .carousel-btn:hover:before {
+            background: var(--lv-white);
+        }
+
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2.5rem;
+            position: relative;
+            z-index: 20;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-dot.active {
+            background-color: var(--lv-gold);
+            transform: scale(1.3);
+        }
+
+        .carousel-dot:hover {
+            transform: scale(1.2);
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--lv-white);
+            width: 60px;
+            height: 60px;
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 10;
+            backdrop-filter: blur(5px);
+        }
+
+        .carousel-arrow:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-arrow.prev {
+            left: 30px;
+        }
+
+        .carousel-arrow.next {
+            right: 30px;
+        }
+
+        .about {
+            background-color: var(--lv-white);
+            position: relative;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-img {
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            opacity: 0;
+            transform: translateX(-80px);
+            border: 1px solid #f0f0f0;
+        }
+
+        .about-img.animated {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text h2 {
+            text-align: left;
+        }
+
+        .about-text h2:after {
+            left: 0;
+            transform: none;
+        }
+
+        .about-text p {
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateX(80px);
+        }
+
+        .about-text.animated p {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .about-text p:nth-child(2) {
+            transition-delay: 0.1s;
+        }
+
+        .about-text p:nth-child(3) {
+            transition-delay: 0.2s;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .about-stats.animated .stat-item {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .about-stats.animated .stat-item:nth-child(1) {
+            transition-delay: 0.3s;
+        }
+
+        .about-stats.animated .stat-item:nth-child(2) {
+            transition-delay: 0.4s;
+        }
+
+        .about-stats.animated .stat-item:nth-child(3) {
+            transition-delay: 0.5s;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 300;
+            color: var(--lv-gold);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-text {
+            font-size: 0.9rem;
+            color: var(--lv-text-light);
+            letter-spacing: 1px;
+        }
+
+        .cart-modal {
+            position: fixed;
+            top: 0;
+            right: -450px;
+            width: 420px;
+            height: 100%;
+            background-color: var(--lv-white);
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+            z-index: 1100;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-modal.active {
+            right: 0;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-header h3 {
+            margin: 0;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--lv-text-light);
+            transition: var(--transition);
+        }
+
+        .close-cart:hover {
+            color: var(--lv-dark);
+            transform: rotate(90deg);
+        }
+
+        .cart-items {
+            flex: 1;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #eee;
+            transition: var(--transition);
+        }
+
+        .cart-item:hover {
+            background-color: var(--lv-cream);
+            padding-left: 10px;
+        }
+
+        .cart-item-img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-details h4 {
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .cart-item-size {
+            font-size: 0.8rem;
+            color: var(--lv-text-light);
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .cart-item-price {
+            color: var(--lv-gold);
+            font-weight: 500;
+        }
+
+        .cart-item-remove {
+            background: none;
+            border: none;
+            color: var(--lv-text-light);
+            cursor: pointer;
+            transition: var(--transition);
+            align-self: flex-start;
+        }
+
+        .cart-item-remove:hover {
+            color: #ff0000;
+            transform: scale(1.1);
+        }
+
+        .cart-footer {
+            padding: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            font-weight: 500;
+            font-size: 1.2rem;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            padding: 18px;
+            background-color: var(--lv-dark);
+            color: var(--lv-white);
+            border: none;
+            border-radius: 0;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+        }
+
+        .checkout-btn:hover {
+            background-color: var(--lv-gold);
+            color: var(--lv-dark);
+            transform: translateY(-3px);
+        }
+
+        .cart-empty {
+            text-align: center;
+            padding: 3rem;
+            color: var(--lv-text-light);
+        }
+
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1050;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+
+        .cart-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1200;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: var(--lv-white);
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            border-radius: 0;
+            padding: 3rem;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--lv-text-light);
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            color: var(--lv-dark);
+            transform: rotate(90deg);
+        }
+
+        .modal-content h2 {
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .modal-content h2:after {
+            left: 0;
+            transform: none;
+        }
+
+        .modal-content h3 {
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .footer {
+            background-color: var(--lv-dark);
+            color: var(--lv-white);
+            padding: 100px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 1px;
+            background-color: var(--lv-gold);
+        }
+
+        .footer-col p {
+            color: #b0b0b0;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #b0b0b0;
+            transition: var(--transition);
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-links a:hover {
+            color: var(--lv-gold);
+            padding-left: 8px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 0;
+            transition: var(--transition);
+        }
+
+        .social-icon:hover {
+            background-color: var(--lv-gold);
+            color: var(--lv-dark);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px 0;
+            text-align: center;
+            color: #b0b0b0;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .video-fallback {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+            display: none;
+        }
+
+        .video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -2;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 100vh;
+                height: auto;
+                padding: 120px 0 80px;
+            }
+            
+            .hero-content {
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            h1 {
+                font-size: 4rem;
+            }
+            
+            h2 {
+                font-size: 2.8rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cart-modal {
+                width: 380px;
+            }
+
+            .search-box {
+                width: 280px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                background-color: var(--lv-white);
+                width: 100%;
+                flex-direction: column;
+                text-align: center;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                transition: var(--transition);
+                padding: 3rem 0;
+                gap: 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-link {
+                display: block;
+                padding: 1.5rem 0;
+                width: 100%;
+                font-size: 1rem;
+
+            }
+
+            .nav-link:after {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero-content h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .carousel-img {
+                height: 500px;
+            }
+
+            .carousel-content {
+                padding: 2rem;
+            }
+
+            .carousel-content h3 {
+                font-size: 1.8rem;
+            }
+
+            .cart-modal {
+                width: 100%;
+                right: -100%;
+            }
+
+            .search-box {
+                width: 250px;
+                right: -80px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 80px 0;
+            }
+            
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2.5rem;
+            }
+            
+            .collection-grid {
+                grid-template-columns: 1fr;
+                justify-items: center;
+            }
+            
+            .featured-grid {
+                grid-template-columns: 1fr;
+                justify-items: center;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .carousel-img {
+                height: 400px;
+            }
+
+            .carousel-content {
+                padding: 1.5rem;
+            }
+
+            .carousel-content h3 {
+                font-size: 1.5rem;
+            }
+
+            .carousel-arrow {
+                width: 50px;
+                height: 50px;
+            }
+
+            .search-box {
+                width: 220px;
+                right: -50px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            
+            .container {
+                padding: 0 20px;
+            }
+            
+            .collection-categories {
+                gap: 0.5rem;
+                margin-bottom: 3rem;
+            }
+            
+            .category-btn {
+                padding: 10px 20px;
+                font-size: 0.75rem;
+            }
+            
+            .collection-item, .featured-card {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+            
+            .carousel-img {
+                height: 350px;
+            }
+
+            .carousel-content {
+                padding: 1rem;
+            }
+
+            .carousel-content h3 {
+                font-size: 1.3rem;
+            }
+
+            .carousel-arrow {
+                width: 40px;
+                height: 40px;
+            }
+
+            .search-box {
+                width: 200px;
+                right: -30px;
+            }
+            
+            .collection-info {
+                padding: 1.5rem;
+            }
+            
+            .featured-content {
+                padding: 1.5rem;
+            }
+            
+            .nav-container {
+                padding: 0 15px;
+            }
+            
+            .nav-logo {
+                font-size: 1.5rem;
+            }
+            
+            .footer {
+                padding: 60px 0 0;
+            }
+            
+            .footer-content {
+                gap: 2rem;
+            }
+            
+            .modal-content {
+                padding: 2rem 1.5rem;
+            }
+            
+            .cart-modal {
+                width: 100%;
+            }
+            
+            .cart-header,
+            .cart-footer {
+                padding: 1.5rem;
+            }
+            
+            .cart-items {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-screen">
+        <div class="luxury-loader"></div>
+        <div class="loading-text">ZHALEM STYLES</div>
+    </div>
+
+    <div class="scroll-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <div class="cart-overlay"></div>
+
+    <div class="cart-modal">
+        <div class="cart-header">
+            <h3>Your Shopping Cart</h3>
+            <button class="close-cart">&times;</button>
+        </div>
+        <div class="cart-items">
+            <div class="cart-empty">
+                <i class="fas fa-shopping-bag" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.3;"></i>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-price">₦0</span>
+            </div>
+      <button class="checkout-btn">Proceed to checkout via <i class="fab fa-whatsapp" style="color: white; font-size: 1.1rem; margin-left: 8px;"></i></button>
+           
+        </div>
+    </div>
+
+    <div class="modal policy-modal">
+        <div class="modal-content">
+            <button class="modal-close policy-close">&times;</button>
+            <h2>Privacy Policy</h2>
+            <p>Last updated: January 1, 2025</p>
+            
+            <h3>Information We Collect</h3>
+            <p>We collect information you provide directly to us when you make a purchase, create an account, or contact our customer service. This may include your name, email address, shipping address, payment information, and phone number.</p>
+            
+            <h3>How We Use Your Information</h3>
+            <p>We use the information we collect to process your orders, communicate with you about products and promotions, improve our services, and personalize your shopping experience.</p>
+            
+            <h3>Information Sharing</h3>
+            <p>We do not sell or rent your personal information to third parties. We may share your information with service providers who assist us in operating our website and conducting our business.</p>
+            
+            <h3>Security</h3>
+            <p>We implement appropriate security measures to protect your personal information. However, no method of transmission over the Internet is 100% secure, and we cannot guarantee absolute security.</p>
+            
+            <h3>Your Rights</h3>
+            <p>You have the right to access, correct, or delete your personal information. You may also opt out of marketing communications at any time by contacting us or using the unsubscribe link in our emails.</p>
+            
+            <h3>Contact Us</h3>
+            <p>If you have any questions about this Privacy Policy, please contact us at privacy@zhalemstyles.com.</p>
+        </div>
+    </div>
+
+    <div class="modal shipping-modal">
+        <div class="modal-content">
+            <button class="modal-close shipping-close">&times;</button>
+            <h2>Shipping Information</h2>
+            
+            <h3>Domestic Shipping</h3>
+            <p>We offer the following shipping options within Nigeria:</p>
+            <ul>
+                <li><strong>Standard Shipping:</strong> 3-5 business days - ₦1,500</li>
+                <li><strong>Express Shipping:</strong> 1-2 business days - ₦3,000</li>
+                <li><strong>Free Shipping:</strong> On orders over ₦50,000</li>
+            </ul>
+            
+            <h3>International Shipping</h3>
+            <p>We ship to over 50 countries worldwide. International shipping costs vary by destination and are calculated at checkout.</p>
+            
+            <h3>Order Processing</h3>
+            <p>Orders are processed within 1-2 business days. You will receive a tracking number via email once your order ships.</p>
+            
+            <h3>Shipping Restrictions</h3>
+            <p>Some items may have shipping restrictions based on size, weight, or destination. We will notify you if any restrictions apply to your order.</p>
+        </div>
+    </div>
+
+    <div class="modal returns-modal">
+        <div class="modal-content">
+            <button class="modal-close returns-close">&times;</button>
+            <h2>Returns & Exchanges</h2>
+            
+            <h3>Return Policy</h3>
+            <p>We offer a 30-day return policy from the date of delivery. Items must be in original condition with tags attached and in their original packaging.</p>
+            
+            <h3>How to Return</h3>
+            <p>To initiate a return:</p>
+            <ol>
+                <li>Contact our customer service team at returns@zhalemstyles.com</li>
+                <li>Include your order number and reason for return</li>
+                <li>We will provide you with a return authorization and shipping label</li>
+                <li>Package your item securely and drop it off at the designated shipping location</li>
+            </ol>
+            
+            <h3>Exchanges</h3>
+            <p>Exchanges are available for items in different sizes or colors, subject to availability. Exchanges are free of charge.</p>
+            
+            <h3>Refunds</h3>
+            <p>Refunds are processed within 5-7 business days after we receive your returned item. The refund will be issued to your original payment method.</p>
+        </div>
+    </div>
+
+    <div class="modal size-modal">
+        <div class="modal-content">
+            <button class="modal-close size-close">&times;</button>
+            <h2>Size Guide</h2>
+            
+            <h3>Clothing Sizes</h3>
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                <thead>
+                    <tr style="background-color: var(--lv-cream);">
+                        <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Size</th>
+                        <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Bust (inches)</th>
+                        <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Waist (inches)</th>
+                        <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Hips (inches)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid #ddd;">XS</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">32-33</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">24-25</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">34-35</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid #ddd;">S</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">34-35</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">26-27</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">36-37</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid #ddd;">M</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">36-37</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">28-29</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">38-39</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid #ddd;">L</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">38-40</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">30-32</td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">40-42</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>How to Measure</h3>
+            <p>For accurate measurements:</p>
+            <ul>
+                <li><strong>Bust:</strong> Measure around the fullest part of your bust</li>
+                <li><strong>Waist:</strong> Measure around the narrowest part of your waist</li>
+                <li><strong>Hips:</strong> Measure around the fullest part of your hips</li>
+            </ul>
+            
+            <p>If you need assistance with sizing, contact our customer service team for personalized recommendations.</p>
+        </div>
+    </div>
+
+    <div class="modal faq-modal">
+        <div class="modal-content">
+            <button class="modal-close faq-close">&times;</button>
+            <h2>Frequently Asked Questions</h2>
+            
+            <h3>Order & Payment</h3>
+            <p><strong>Q: How can I track my order?</strong><br>
+            A: You will receive a tracking number via email once your order ships. You can also track your order by logging into your account.</p>
+            
+            <p><strong>Q: What payment methods do you accept?</strong><br>
+            A: We accept credit/debit cards, bank transfers, and payment through WhatsApp for Nigerian customers.</p>
+            
+            <p><strong>Q: Can I modify or cancel my order?</strong><br>
+            A: You can modify or cancel your order within 1 hour of placing it by contacting our customer service team.</p>
+            
+            <h3>Shipping & Delivery</h3>
+            <p><strong>Q: Do you offer international shipping?</strong><br>
+            A: Yes, we ship to over 50 countries worldwide. Shipping costs and delivery times vary by destination.</p>
+            
+            <p><strong>Q: How long does shipping take?</strong><br>
+            A: Domestic shipping typically takes 3-5 business days for standard shipping and 1-2 days for express shipping.</p>
+            
+            <h3>Product & Sizing</h3>
+            <p><strong>Q: How do I care for my garments?</strong><br>
+            A: Care instructions are provided on each product's label and description page. We recommend following these instructions to maintain the quality of your items.</p>
+            
+            <p><strong>Q: What if an item doesn't fit?</strong><br>
+            A: We offer free exchanges for different sizes within 30 days of delivery, subject to availability.</p>
+            
+            <h3>Returns & Refunds</h3>
+            <p><strong>Q: What is your return policy?</strong><br>
+            A: We offer a 30-day return policy for items in original condition with tags attached.</p>
+            
+            <p><strong>Q: How long do refunds take?</strong><br>
+            A: Refunds are processed within 5-7 business days after we receive your returned item.</p>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Zhalem<span>Styles</span></a>
+            
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#collections" class="nav-link">Collections</a></li>
+                <li><a href="#featured" class="nav-link">Featured</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <div class="search-container">
+                    <a href="#" class="nav-icon search-toggle">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <div class="search-box">
+                        <input type="text" class="search-input" placeholder="Search for products...">
+                        <div class="search-results">
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="nav-icon cart-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="video-container">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="Bgv 1.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <h1>Elevate Your Style</h1>
+            <p>Discover the latest trends in fashion, accessories, and footwear. Curated collections for the modern individual.</p>
+            <div class="hero-btns">
+                <a href="#collections" class="btn btn-accent">Shop Now</a>
+                <a href="#about" class="btn btn-light">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="collections" class="section collections">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Collections</h2>
+                <p>Explore our carefully curated selection of fashion items across different categories</p>
+            </div>
+            
+            <div class="collection-categories">
+                <button class="category-btn active" data-category="all">All Items</button>
+                <button class="category-btn" data-category="clothing">Clothing</button>
+                <button class="category-btn" data-category="shoes">Footwear</button>
+                <button class="category-btn" data-category="accessories">Accessories</button>
+                <button class="category-btn" data-category="bags">Bags</button>
+            </div>
+            
+            <div class="collection-grid stagger-animation">
+                <div class="collection-item" data-category="clothing">
+                    <div class="collection-img">
+                        <img src="Elegant Evening Dress.jpeg" alt="Elegant Evening Dress">
+                    </div>
+                    <div class="collection-badge">New</div>
+                    <div class="collection-info">
+                        <h3>Elegant Evening Dress</h3>
+                        <p>Perfect for special occasions with flowing silhouette</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="XS">XS</button>
+                                <button class="size-option" data-size="S">S</button>
+                                <button class="size-option" data-size="M">M</button>
+                                <button class="size-option" data-size="L">L</button>
+                                <button class="size-option" data-size="XL">XL</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦25,000 <span class="old-price">₦32,000</span></div>
+                            <button class="btn add-to-cart" data-id="1" data-name="Elegant Evening Dress" data-price="25000" data-image="Elegant Evening Dress.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="collection-item" data-category="clothing">
+                    <div class="collection-img">
+                        <img src="Denim Jacket.jpeg" alt="Denim Jacket">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Classic Denim Jacket</h3>
+                        <p>Vintage washed denim with modern fit</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="XS">XS</button>
+                                <button class="size-option" data-size="S">S</button>
+                                <button class="size-option" data-size="M">M</button>
+                                <button class="size-option" data-size="L">L</button>
+                                <button class="size-option" data-size="XL">XL</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦18,500</div>
+                            <button class="btn add-to-cart" data-id="2" data-name="Classic Denim Jacket" data-price="18500" data-image="Denim Jacket.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-item" data-category="clothing">
+                    <div class="collection-img">
+                        <img src="Casual Linen Shirt.jpeg" alt="Casual Shirt">
+                    </div>
+                    <div class="collection-badge">New</div>
+                    <div class="collection-info">
+                        <h3>Casual Linen Shirt</h3>
+                        <p>Breathable linen fabric perfect for warm weather</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="XS">XS</button>
+                                <button class="size-option" data-size="S">S</button>
+                                <button class="size-option" data-size="M">M</button>
+                                <button class="size-option" data-size="L">L</button>
+                                <button class="size-option out-of-stock" data-size="XL">XL</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦12,500</div>
+                            <button class="btn add-to-cart" data-id="9" data-name="Casual Linen Shirt" data-price="12500" data-image="Casual Linen Shirt.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-item" data-category="clothing">
+                    <div class="collection-img">
+                        <img src="Silk Necktie.jpeg" alt="Silk Tie">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Silk Necktie</h3>
+                        <p>Elegant silk tie for formal occasions</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="Standard">Standard</button>
+                                <button class="size-option" data-size="Long">Long</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦8,000</div>
+                            <button class="btn add-to-cart" data-id="10" data-name="Silk Necktie" data-price="8000" data-image="Silk Necktie.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="collection-item" data-category="clothing">
+                    <div class="collection-img">
+                        <img src="Floral Maxi Dress.jpeg" alt="Maxi Dress">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Floral Maxi Dress</h3>
+                        <p>Beautiful floral pattern with comfortable fit</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="XS">XS</button>
+                                <button class="size-option" data-size="S">S</button>
+                                <button class="size-option" data-size="M">M</button>
+                                <button class="size-option" data-size="L">L</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦22,000</div>
+                            <button class="btn add-to-cart" data-id="15" data-name="Floral Maxi Dress" data-price="22000" data-image="Floral Maxi Dress.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-item" data-category="clothing">
+                    <div class="collection-img">
+                        <img src="Tailored Blazer.jpeg" alt="Blazer">
+                    </div>
+                    <div class="collection-badge">Bestseller</div>
+                    <div class="collection-info">
+                        <h3>Tailored Blazer</h3>
+                        <p>Professional blazer for office wear</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="S">S</button>
+                                <button class="size-option" data-size="M">M</button>
+                                <button class="size-option" data-size="L">L</button>
+                                <button class="size-option" data-size="XL">XL</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦35,000</div>
+                            <button class="btn add-to-cart" data-id="16" data-name="Tailored Blazer" data-price="35000" data-image="Tailored Blazer.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-item" data-category="clothing">
+                    <div class="collection-img">
+                        <img src="Cashmere Knit Sweater.jpeg" alt="Knit Sweater">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Cashmere Knit Sweater</h3>
+                        <p>Luxurious cashmere for cold weather</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="S">S</button>
+                                <button class="size-option" data-size="M">M</button>
+                                <button class="size-option" data-size="L">L</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦28,500</div>
+                            <button class="btn add-to-cart" data-id="17" data-name="Cashmere Knit Sweater" data-price="28500" data-image="Cashmere Knit Sweater.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-item" data-category="clothing">
+                    <div class="collection-img">
+                        <img src="Classic Polo Shirt.jpeg" alt="Polo Shirt">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Classic Polo Shirt</h3>
+                        <p>Versatile polo for casual occasions</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="XS">XS</button>
+                                <button class="size-option" data-size="S">S</button>
+                                <button class="size-option" data-size="M">M</button>
+                                <button class="size-option" data-size="L">L</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦9,500</div>
+                            <button class="btn add-to-cart" data-id="18" data-name="Classic Polo Shirt" data-price="9500" data-image="Classic Polo Shirt.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-item" data-category="clothing">
+                    <div class="collection-img">
+                        <img src="Genuine Leather Jacket.jpeg" alt="Leather Jacket">
+                    </div>
+                    <div class="collection-badge">Limited</div>
+                    <div class="collection-info">
+                        <h3>Genuine Leather Jacket</h3>
+                        <p>Premium leather with perfect fit</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="S">S</button>
+                                <button class="size-option" data-size="M">M</button>
+                                <button class="size-option" data-size="L">L</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦65,000</div>
+                            <button class="btn add-to-cart" data-id="19" data-name="Genuine Leather Jacket" data-price="65000" data-image="Genuine Leather Jacket.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-item" data-category="clothing">
+                    <div class="collection-img">
+                        <img src="Cocktail Dress.jpeg" alt="Cocktail Dress">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Cocktail Dress</h3>
+                        <p>Elegant dress for evening events</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="XS">XS</button>
+                                <button class="size-option" data-size="S">S</button>
+                                <button class="size-option" data-size="M">M</button>
+                                <button class="size-option" data-size="L">L</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦30,000</div>
+                            <button class="btn add-to-cart" data-id="20" data-name="Cocktail Dress" data-price="30000" data-image="Cocktail Dress.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-item" data-category="clothing">
+                    <div class="collection-img">
+                        <img src="Cashmere Turtleneck.jpeg" alt="Turtleneck">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Cashmere Turtleneck</h3>
+                        <p>Warm and stylish turtleneck sweater</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="S">S</button>
+                                <button class="size-option" data-size="M">M</button>
+                                <button class="size-option" data-size="L">L</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦24,500</div>
+                            <button class="btn add-to-cart" data-id="21" data-name="Cashmere Turtleneck" data-price="24500" data-image="Cashmere Turtleneck.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-item" data-category="clothing">
+                    <div class="collection-img">
+                        <img src="Summer Floral Dress.jpeg" alt="Summer Dress">
+                    </div>
+                    <div class="collection-badge">Sale</div>
+                    <div class="collection-info">
+                        <h3>Summer Floral Dress</h3>
+                        <p>Light and airy dress perfect for summer</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="XS">XS</button>
+                                <button class="size-option" data-size="S">S</button>
+                                <button class="size-option" data-size="M">M</button>
+                                <button class="size-option" data-size="L">L</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦18,000 <span class="old-price">₦24,000</span></div>
+                            <button class="btn add-to-cart" data-id="22" data-name="Summer Floral Dress" data-price="18000" data-image="Summer Floral Dress.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="collection-item" data-category="shoes">
+                    <div class="collection-img">
+                        <img src="Designer Heels.jpeg" alt="Designer Heels">
+                    </div>
+                    <div class="collection-badge">Bestseller</div>
+                    <div class="collection-info">
+                        <h3>Designer Heels</h3>
+                        <p>Elegant heels with comfortable cushioning</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="36">36</button>
+                                <button class="size-option" data-size="37">37</button>
+                                <button class="size-option" data-size="38">38</button>
+                                <button class="size-option" data-size="39">39</button>
+                                <button class="size-option" data-size="40">40</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦22,000</div>
+                            <button class="btn add-to-cart" data-id="3" data-name="Designer Heels" data-price="22000" data-image="Designer Heels.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="collection-item" data-category="shoes">
+                    <div class="collection-img">
+                        <img src="Urban Sneakers.jpeg" alt="Sneakers">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Urban Sneakers</h3>
+                        <p>Comfortable street-style sneakers</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="40">40</button>
+                                <button class="size-option" data-size="41">41</button>
+                                <button class="size-option" data-size="42">42</button>
+                                <button class="size-option" data-size="43">43</button>
+                                <button class="size-option" data-size="44">44</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦15,500</div>
+                            <button class="btn add-to-cart" data-id="4" data-name="Urban Sneakers" data-price="15500" data-image="Urban Sneakers.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-item" data-category="shoes">
+                    <div class="collection-img">
+                        <img src="Leather Loafers.jpeg" alt="Leather Loafers">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Leather Loafers</h3>
+                        <p>Classic loafers in premium leather</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="41">41</button>
+                                <button class="size-option" data-size="42">42</button>
+                                <button class="size-option" data-size="43">43</button>
+                                <button class="size-option" data-size="44">44</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦19,500</div>
+                            <button class="btn add-to-cart" data-id="11" data-name="Leather Loafers" data-price="19500" data-image="Leather Loafers.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="collection-item" data-category="shoes">
+                    <div class="collection-img">
+                        <img src="Performance Running Shoes.jpeg" alt="Running Shoes">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Performance Running Shoes</h3>
+                        <p>Lightweight running shoes with cushioning</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="40">40</button>
+                                <button class="size-option" data-size="41">41</button>
+                                <button class="size-option" data-size="42">42</button>
+                                <button class="size-option" data-size="43">43</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦24,000</div>
+                            <button class="btn add-to-cart" data-id="23" data-name="Performance Running Shoes" data-price="24000" data-image="Performance Running Shoes.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-item" data-category="shoes">
+                    <div class="collection-img">
+                        <img src="Basketball Sneakers.jpeg" alt="Basketball Shoes">
+                    </div>
+                    <div class="collection-badge">New</div>
+                    <div class="collection-info">
+                        <h3>Basketball Sneakers</h3>
+                        <p>High-performance basketball shoes</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="42">42</button>
+                                <button class="size-option" data-size="43">43</button>
+                                <button class="size-option" data-size="44">44</button>
+                                <button class="size-option" data-size="45">45</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦32,000</div>
+                            <button class="btn add-to-cart" data-id="24" data-name="Basketball Sneakers" data-price="32000" data-image="Basketball Sneakers.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-item" data-category="shoes">
+                    <div class="collection-img">
+                        <img src="Platform Wedges.jpeg" alt="Wedges">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Platform Wedges</h3>
+                        <p>Comfortable wedges with platform sole</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="37">37</button>
+                                <button class="size-option" data-size="38">38</button>
+                                <button class="size-option" data-size="39">39</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦18,500</div>
+                            <button class="btn add-to-cart" data-id="25" data-name="Platform Wedges" data-price="18500" data-image="Platform Wedges.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-item" data-category="shoes">
+                    <div class="collection-img">
+                        <img src="Classic Oxford Shoes.jpeg" alt="Oxford Shoes">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Classic Oxford Shoes</h3>
+                        <p>Timeless oxfords for formal occasions</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="41">41</button>
+                                <button class="size-option" data-size="42">42</button>
+                                <button class="size-option" data-size="43">43</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦26,000</div>
+                            <button class="btn add-to-cart" data-id="26" data-name="Classic Oxford Shoes" data-price="26000" data-image="Classic Oxford Shoes.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-item" data-category="shoes">
+                    <div class="collection-img">
+                        <img src="Leather Sandals.jpeg" alt="Sandals">
+                    </div>
+                    <div class="collection-badge">Sale</div>
+                    <div class="collection-info">
+                        <h3>Leather Sandals</h3>
+                        <p>Comfortable leather sandals for summer</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="38">38</button>
+                                <button class="size-option" data-size="39">39</button>
+                                <button class="size-option" data-size="40">40</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦12,500 <span class="old-price">₦16,000</span></div>
+                            <button class="btn add-to-cart" data-id="27" data-name="Leather Sandals" data-price="12500" data-image="Leather Sandals.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-item" data-category="shoes">
+                    <div class="collection-img">
+                        <img src="Leather Ankle Boots.jpeg" alt="Boots">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Leather Ankle Boots</h3>
+                        <p>Stylish ankle boots for all seasons</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="38">38</button>
+                                <button class="size-option" data-size="39">39</button>
+                                <button class="size-option" data-size="40">40</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦28,500</div>
+                            <button class="btn add-to-cart" data-id="28" data-name="Leather Ankle Boots" data-price="28500" data-image="Leather Ankle Boots.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-item" data-category="shoes">
+                    <div class="collection-img">
+                        <img src="Canvas Espadrilles.jpeg" alt="Espadrilles">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Canvas Espadrilles</h3>
+                        <p>Lightweight espadrilles for casual wear</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="39">39</button>
+                                <button class="size-option" data-size="40">40</button>
+                                <button class="size-option" data-size="41">41</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦14,000</div>
+                            <button class="btn add-to-cart" data-id="29" data-name="Canvas Espadrilles" data-price="14000" data-image="Canvas Espadrilles.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="collection-item" data-category="accessories">
+                    <div class="collection-img">
+                        <img src="Statement Necklace.jpeg" alt="Statement Necklace">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Statement Necklace</h3>
+                        <p>Handcrafted jewelry piece with premium materials</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="One Size">One Size</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦8,500</div>
+                            <button class="btn add-to-cart" data-id="5" data-name="Statement Necklace" data-price="8500" data-image="Statement Necklace.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="collection-item" data-category="accessories">
+                    <div class="collection-img">
+                        <img src="Designer Watch.jpeg" alt="Luxury Watch">
+                    </div>
+                    <div class="collection-badge">Limited</div>
+                    <div class="collection-info">
+                        <h3>Luxury Watch</h3>
+                        <p>Elegant timepiece with leather strap</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="Small">Small</button>
+                                <button class="size-option" data-size="Medium">Medium</button>
+                                <button class="size-option" data-size="Large">Large</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦45,000</div>
+                            <button class="btn add-to-cart" data-id="6" data-name="Luxury Watch" data-price="45000" data-image="Designer Watch.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-item" data-category="accessories">
+                    <div class="collection-img">
+                        <img src="Gold Plated Bracelet.jpeg" alt="Gold Bracelet">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Gold Plated Bracelet</h3>
+                        <p>Elegant bracelet with intricate design</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="Small">Small</button>
+                                <button class="size-option" data-size="Medium">Medium</button>
+                                <button class="size-option" data-size="Large">Large</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦12,000</div>
+                            <button class="btn add-to-cart" data-id="12" data-name="Gold Plated Bracelet" data-price="12000" data-image="Gold Plated Bracelet.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-item" data-category="accessories">
+                    <div class="collection-img">
+                        <img src="Sunglasses.jpeg" alt="Designer Sunglasses">
+                    </div>
+                    <div class="collection-badge">Trending</div>
+                    <div class="collection-info">
+                        <h3>Designer Sunglasses</h3>
+                        <p>UV protection with stylish frames</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="One Size">One Size</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦15,000</div>
+                            <button class="btn add-to-cart" data-id="13" data-name="Designer Sunglasses" data-price="15000" data-image="Sunglasses.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="collection-item" data-category="accessories">
+                    <div class="collection-img">
+                        <img src="Pearl Drop Earrings.jpeg" alt="Pearl Earrings">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Pearl Drop Earrings</h3>
+                        <p>Elegant pearl earrings for special occasions</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="One Size">One Size</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦9,500</div>
+                            <button class="btn add-to-cart" data-id="30" data-name="Pearl Drop Earrings" data-price="9500" data-image="Pearl Drop Earrings.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-item" data-category="accessories">
+                    <div class="collection-img">
+                        <img src="Genuine Leather Belt.jpeg" alt="Leather Belt">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Genuine Leather Belt</h3>
+                        <p>Classic leather belt with silver buckle</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="S">S (28-30)</button>
+                                <button class="size-option" data-size="M">M (32-34)</button>
+                                <button class="size-option" data-size="L">L (36-38)</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦7,500</div>
+                            <button class="btn add-to-cart" data-id="31" data-name="Genuine Leather Belt" data-price="7500" data-image="Genuine Leather Belt.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-item" data-category="accessories">
+                    <div class="collection-img">
+                        <img src="Silk Scarf.jpeg" alt="Scarf">
+                    </div>
+                    <div class="collection-badge">New</div>
+                    <div class="collection-info">
+                        <h3>Silk Scarf</h3>
+                        <p>Luxurious silk scarf with floral pattern</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="One Size">One Size</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦11,000</div>
+                            <button class="btn add-to-cart" data-id="32" data-name="Silk Scarf" data-price="11000" data-image="Silk Scarf.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-item" data-category="accessories">
+                    <div class="collection-img">
+                        <img src="Silver Cufflinks.jpeg" alt="Cufflinks">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Silver Cufflinks</h3>
+                        <p>Elegant cufflinks for formal shirts</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="One Size">One Size</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦6,500</div>
+                            <button class="btn add-to-cart" data-id="33" data-name="Silver Cufflinks" data-price="6500" data-image="Silver Cufflinks.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-item" data-category="accessories">
+                    <div class="collection-img">
+                        <img src="Wide Brim Hat.jpeg" alt="Hat">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Wide Brim Hat</h3>
+                        <p>Stylish hat for sun protection</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="S/M">S/M</button>
+                                <button class="size-option" data-size="L/XL">L/XL</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦8,500</div>
+                            <button class="btn add-to-cart" data-id="34" data-name="Wide Brim Hat" data-price="8500" data-image="Wide Brim Hat.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="collection-item" data-category="bags">
+                    <div class="collection-img">
+                        <img src="Leather Handbag.jpeg" alt="Leather Handbag">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Leather Handbag</h3>
+                        <p>Premium leather with multiple compartments</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="Small">Small</button>
+                                <button class="size-option" data-size="Medium">Medium</button>
+                                <button class="size-option" data-size="Large">Large</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦32,000</div>
+                            <button class="btn add-to-cart" data-id="7" data-name="Leather Handbag" data-price="32000" data-image="Leather Handbag.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="collection-item" data-category="bags">
+                    <div class="collection-img">
+                        <img src="Crossbody Bag.jpeg" alt="Crossbody Bag">
+                    </div>
+                    <div class="collection-badge">Sale</div>
+                    <div class="collection-info">
+                        <h3>Crossbody Bag</h3>
+                        <p>Compact and stylish for everyday use</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="One Size">One Size</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦14,500 <span class="old-price">₦19,000</span></div>
+                            <button class="btn add-to-cart" data-id="8" data-name="Crossbody Bag" data-price="14500" data-image="Crossbody Bag.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-item" data-category="bags">
+                    <div class="collection-img">
+                        <img src="Leather Backpack.jpeg" alt="Backpack">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Leather Backpack</h3>
+                        <p>Stylish and functional for daily use</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="Small">Small</button>
+                                <button class="size-option" data-size="Medium">Medium</button>
+                                <button class="size-option" data-size="Large">Large</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦28,000</div>
+                            <button class="btn add-to-cart" data-id="14" data-name="Leather Backpack" data-price="28000" data-image="Leather Backpack.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="collection-item" data-category="bags">
+                    <div class="collection-img">
+                        <img src="Evening Clutch.jpeg" alt="Clutch">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Evening Clutch</h3>
+                        <p>Elegant clutch for special occasions</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="One Size">One Size</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦16,500</div>
+                            <button class="btn add-to-cart" data-id="35" data-name="Evening Clutch" data-price="16500" data-image="Evening Clutch.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-item" data-category="bags">
+                    <div class="collection-img">
+                        <img src="Canvas Tote Bag.jpeg" alt="Tote Bag">
+                    </div>
+                    <div class="collection-badge">Bestseller</div>
+                    <div class="collection-info">
+                        <h3>Canvas Tote Bag</h3>
+                        <p>Spacious tote for everyday essentials</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="One Size">One Size</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦12,000</div>
+                            <button class="btn add-to-cart" data-id="36" data-name="Canvas Tote Bag" data-price="12000" data-image="Canvas Tote Bag.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-item" data-category="bags">
+                    <div class="collection-img">
+                        <img src="Leather Messenger Bag.jpeg" alt="Messenger Bag">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Leather Messenger Bag</h3>
+                        <p>Professional bag for work and travel</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="Small">Small</button>
+                                <button class="size-option" data-size="Medium">Medium</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦34,000</div>
+                            <button class="btn add-to-cart" data-id="37" data-name="Leather Messenger Bag" data-price="34000" data-image="Leather Messenger Bag.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-item" data-category="bags">
+                    <div class="collection-img">
+                        <img src="Weekender Travel Bag.jpeg" alt="Weekender Bag">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Weekender Travel Bag</h3>
+                        <p>Spacious bag for short trips</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="One Size">One Size</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦42,000</div>
+                            <button class="btn add-to-cart" data-id="38" data-name="Weekender Travel Bag" data-price="42000" data-image="Weekender Travel Bag.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-item" data-category="bags">
+                    <div class="collection-img">
+                        <img src="Leather Bucket Bag.jpeg" alt="Bucket Bag">
+                    </div>
+                    <div class="collection-badge">Trending</div>
+                    <div class="collection-info">
+                        <h3>Leather Bucket Bag</h3>
+                        <p>Trendy bucket bag with drawstring closure</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="One Size">One Size</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦26,500</div>
+                            <button class="btn add-to-cart" data-id="39" data-name="Leather Bucket Bag" data-price="26500" data-image="Leather Bucket Bag.jpeg">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-item" data-category="bags">
+                    <div class="collection-img">
+                        <img src="Mini Crossbody Bag.jpeg" alt="Mini Bag">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Mini Crossbody Bag</h3>
+                        <p>Compact bag for essentials only</p>
+                        
+                        <div class="size-selection">
+                            <label>Select Size:</label>
+                            <div class="size-options">
+                                <button class="size-option" data-size="One Size">One Size</button>
+                            </div>
+                        </div>
+                        
+                        <div class="collection-price">
+                            <div class="price">₦18,000</div>
+                            <button class="btn add-to-cart" data-id="40" data-name="Mini Crossbody Bag" data-price="18000" data-image="Mini Crossbody Bag.jpeg`">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="featured" class="section featured">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Products</h2>
+                <p>Handpicked items that represent the essence of ZhalemStyles</p>
+            </div>
+            
+            <div class="featured-grid stagger-animation">
+                <div class="featured-card">
+                    <div class="featured-img">
+                        <img src="Designer Collection.jpeg" alt="Featured Item 1">
+                    </div>
+                    <div class="featured-content">
+                        <h3>Designer Collection</h3>
+                        <p>Exclusive pieces from renowned designers</p>
+                        <a href="#collections" class="btn">Explore</a>
+                    </div>
+                </div>
+                
+                <div class="featured-card">
+                    <div class="featured-img">
+                        <img src="Seasonal Essentials.jpeg" alt="Featured Item 2">
+                    </div>
+                    <div class="featured-content">
+                        <h3>Seasonal Essentials</h3>
+                        <p>Must-have items for the current season</p>
+                        <a href="#collections" class="btn">Discover</a>
+                    </div>
+                </div>
+                
+                <div class="featured-card">
+                    <div class="featured-img">
+                        <img src="Limited Edition.jpeg" alt="Featured Item 3">
+                    </div>
+                    <div class="featured-content">
+                        <h3>Limited Edition</h3>
+                        <p>Exclusive items available for a short time</p>
+                        <a href="#collections" class="btn">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="carousel-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trending Now</h2>
+                <p>Discover the latest fashion trends and seasonal collections</p>
+            </div>
+            
+            <div class="carousel-container">
+                <div class="carousel-arrow prev">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="carousel-arrow next">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                
+                <div class="carousel">
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Trend 1" class="carousel-img">
+                        <div class="carousel-content">
+                            <h3>Summer Collection 2025</h3>
+                            <p>Lightweight fabrics and vibrant colors for the warm season. Discover our new arrivals perfect for beach days and summer evenings.</p>
+                            <a href="#collections" class="btn carousel-btn">Shop Collection</a>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Trend 2" class="carousel-img">
+                        <div class="carousel-content">
+                            <h3>Accessory Trends</h3>
+                            <p>Elevate your outfits with our curated selection of statement accessories. From bold jewelry to elegant handbags.</p>
+                            <a href="#collections" class="btn carousel-btn">View Accessories</a>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="Footwear Trends (2).jpeg" alt="Trend 3" class="carousel-img">
+                        <div class="carousel-content">
+                            <h3>Footwear Focus</h3>
+                            <p>Step out in style with our latest footwear collection. From comfortable sneakers to elegant heels for every occasion.</p>
+                            <a href="#collections" class="btn carousel-btn">Explore Footwear</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-nav">
+                    <div class="carousel-dot active" data-slide="0"></div>
+                    <div class="carousel-dot" data-slide="1"></div>
+                    <div class="carousel-dot" data-slide="2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="About ZhalemStyles">
+                </div>
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <p>Founded in 2025, ZhalemStyles is a luxury fashion brand dedicated to bringing you the latest fashion trends with a focus on quality and sophistication. Our journey began with a simple vision: to make premium fashion accessible to everyone.</p>
+                    <p>Our mission is to empower individuals to express their unique style through high-quality clothing, accessories, and footwear that combine aesthetic appeal with comfort and functionality.</p>
+                    <p>We work with both established and emerging designers to bring you exclusive pieces that you won't find anywhere else.</p>
+                    
+                    <div class="about-stats">   
+                        <div class="stat-item">
+                            <span class="stat-number">1+</span>
+                            <span class="stat-text">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-text">Designer Collections</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">200+</span>
+                            <span class="stat-text">Happy Customers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>ZhalemStyles</h3>
+                    <p>Elevating fashion with carefully curated collections that blend contemporary trends with timeless elegance.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/toluwanimi.akinyemi.2025" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/toluwanimi.akinyemi?igsh=emdjZnpoY3Q3djZm" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/AkinyemiTo9623?t=Q1R9e6KmydQdzE527wPXUQ&s=09" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="https://api.whatsapp.com/send?phone=2349060335653" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#collections">Collections</a></li>
+                        <li><a href="#featured">Featured</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="shipping-info">Shipping Information</a></li>
+                        <li><a href="#" class="returns-info">Returns & Exchanges</a></li>
+                        <li><a href="#" class="size-guide">Size Guide</a></li>
+                        <li><a href="#" class="faq-link">FAQs</a></li>
+                        <li><a href="#" class="privacy-policy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> KM 15, IKORODU-ITOKIN ROAD, LAGOS, NIGERIA</li>
+                        <li><i class="fas fa-phone"></i> +234 90 6033 5653</li>
+                        <li><i class="fas fa-envelope"></i> toluwanimiakinyemi2@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Mon - Sat: 9AM - 8PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 With love, ZhalemStyles.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('load', function() {
+            const loadingScreen = document.querySelector('.loading-screen');
+            setTimeout(() => {
+                loadingScreen.classList.add('hidden');
+            }, 1500);
+            
+            setTimeout(initAnimations, 100);
+            
+            const video = document.querySelector('.hero-video');
+            if (video) {
+                video.muted = true;
+                video.play().catch(e => {
+                    console.log("Video autoplay failed:", e);
+                    document.querySelector('.video-fallback').style.display = 'block';
+                });
+            }
+        });
+
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            const scrollToTopBtn = document.querySelector('.scroll-to-top');
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+
+            checkAnimations();
+        });
+
+        document.querySelector('.scroll-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        const products = [
+            { id: 1, name: "Elegant Evening Dress", category: "clothing", price: 25000, image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 2, name: "Classic Denim Jacket", category: "clothing", price: 18500, image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 3, name: "Designer Heels", category: "shoes", price: 22000, image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 4, name: "Urban Sneakers", category: "shoes", price: 15500, image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 5, name: "Statement Necklace", category: "accessories", price: 8500, image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 6, name: "Luxury Watch", category: "accessories", price: 45000, image: "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 7, name: "Leather Handbag", category: "bags", price: 32000, image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 8, name: "Crossbody Bag", category: "bags", price: 14500, image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 9, name: "Casual Linen Shirt", category: "clothing", price: 12500, image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 10, name: "Silk Necktie", category: "accessories", price: 8000, image: "https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 11, name: "Leather Loafers", category: "shoes", price: 19500, image: "https://images.unsplash.com/photo-1542280756-74b2f55e73ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 12, name: "Gold Plated Bracelet", category: "accessories", price: 12000, image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 13, name: "Designer Sunglasses", category: "accessories", price: 15000, image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 14, name: "Leather Backpack", category: "bags", price: 28000, image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 15, name: "Floral Maxi Dress", category: "clothing", price: 22000, image: "https://images.unsplash.com/photo-1505022610485-0249ba5b3675?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 16, name: "Tailored Blazer", category: "clothing", price: 35000, image: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 17, name: "Cashmere Knit Sweater", category: "clothing", price: 28500, image: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 18, name: "Classic Polo Shirt", category: "clothing", price: 9500, image: "https://images.unsplash.com/photo-1582418702059-97ebafb35d09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 19, name: "Genuine Leather Jacket", category: "clothing", price: 65000, image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 20, name: "Cocktail Dress", category: "clothing", price: 30000, image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 21, name: "Cashmere Turtleneck", category: "clothing", price: 24500, image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 22, name: "Summer Floral Dress", category: "clothing", price: 18000, image: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 23, name: "Performance Running Shoes", category: "shoes", price: 24000, image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 24, name: "Basketball Sneakers", category: "shoes", price: 32000, image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 25, name: "Platform Wedges", category: "shoes", price: 18500, image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 26, name: "Classic Oxford Shoes", category: "shoes", price: 26000, image: "https://images.unsplash.com/photo-1542280756-74b2f55e73ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 27, name: "Leather Sandals", category: "shoes", price: 12500, image: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 28, name: "Leather Ankle Boots", category: "shoes", price: 28500, image: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 29, name: "Canvas Espadrilles", category: "shoes", price: 14000, image: "https://images.unsplash.com/photo-1605812860427-4024433a70fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 30, name: "Pearl Drop Earrings", category: "accessories", price: 9500, image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 31, name: "Genuine Leather Belt", category: "accessories", price: 7500, image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 32, name: "Silk Scarf", category: "accessories", price: 11000, image: "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 33, name: "Silver Cufflinks", category: "accessories", price: 6500, image: "https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 34, name: "Wide Brim Hat", category: "accessories", price: 8500, image: "https://images.unsplash.com/photo-1589782182703-2aaa690433b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 35, name: "Evening Clutch", category: "bags", price: 16500, image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 36, name: "Canvas Tote Bag", category: "bags", price: 12000, image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 37, name: "Leather Messenger Bag", category: "bags", price: 34000, image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 38, name: "Weekender Travel Bag", category: "bags", price: 42000, image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 39, name: "Leather Bucket Bag", category: "bags", price: 26500, image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" },
+            { id: 40, name: "Mini Crossbody Bag", category: "bags", price: 18000, image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" }
+        ];
+
+        const searchToggle = document.querySelector('.search-toggle');
+        const searchBox = document.querySelector('.search-box');
+        const searchInput = document.querySelector('.search-input');
+        const searchResults = document.querySelector('.search-results');
+
+        searchToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            searchBox.classList.toggle('active');
+            if (searchBox.classList.contains('active')) {
+                searchInput.focus();
+            }
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!searchToggle.contains(e.target) && !searchBox.contains(e.target)) {
+                searchBox.classList.remove('active');
+            }
+        });
+
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            searchResults.innerHTML = '';
+            
+            if (searchTerm.length < 2) {
+                return;
+            }
+            
+            const filteredProducts = products.filter(product => 
+                product.name.toLowerCase().includes(searchTerm)
+            );
+            
+            if (filteredProducts.length === 0) {
+                searchResults.innerHTML = '<div class="search-result-item">No products found</div>';
+                return;
+            }
+            
+            filteredProducts.forEach(product => {
+                const resultItem = document.createElement('div');
+                resultItem.classList.add('search-result-item');
+                resultItem.textContent = product.name;
+                resultItem.addEventListener('click', function() {
+                    searchInput.value = product.name;
+                    searchBox.classList.remove('active');
+                   
+                    const categoryButtons = document.querySelectorAll('.category-btn');
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    document.querySelector('.category-btn[data-category="all"]').classList.add('active');
+                    
+                    const collectionItems = document.querySelectorAll('.collection-item');
+                    collectionItems.forEach(item => {
+                        if (item.querySelector('h3').textContent === product.name) {
+                            item.style.display = 'block';
+                           
+                            item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+               
+                            item.style.boxShadow = '0 0 0 3px var(--lv-gold)';
+                            setTimeout(() => {
+                                item.style.boxShadow = '';
+                            }, 2000);
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+                searchResults.appendChild(resultItem);
+            });
+        });
+
+        document.querySelectorAll('.size-option').forEach(option => {
+            option.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (this.classList.contains('out-of-stock')) return;
+                
+                const sizeOptions = this.closest('.size-options');
+                sizeOptions.querySelectorAll('.size-option').forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                this.classList.add('selected');
+            });
+        });
+
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        const collectionItems = document.querySelectorAll('.collection-item');
+
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                const category = this.getAttribute('data-category');
+                collectionItems.forEach(item => {
+                    if (category === 'all' || item.getAttribute('data-category') === category) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        collectionItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                if (e.target.closest('.size-option') || e.target.closest('.add-to-cart')) {
+                    return;
+                }
+                collectionItems.forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+                const sizeOptions = this.querySelectorAll('.size-option:not(.out-of-stock)');
+                if (sizeOptions.length === 1) {
+                    sizeOptions[0].click();
+                }
+            });
+        });
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        const cartIcon = document.querySelector('.cart-icon');
+        const cartModal = document.querySelector('.cart-modal');
+        const cartOverlay = document.querySelector('.cart-overlay');
+        const closeCart = document.querySelector('.close-cart');
+        const cartItems = document.querySelector('.cart-items');
+        const cartCount = document.querySelector('.cart-count');
+        const totalPrice = document.querySelector('.total-price');
+        const checkoutBtn = document.querySelector('.checkout-btn');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+        let cart = [];
+
+
+        cartIcon.addEventListener('click', (e) => {
+            e.preventDefault();
+            cartModal.classList.add('active');
+            cartOverlay.classList.add('active');
+        });
+
+        closeCart.addEventListener('click', () => {
+            cartModal.classList.remove('active');
+            cartOverlay.classList.remove('active');
+        });
+
+        cartOverlay.addEventListener('click', () => {
+            cartModal.classList.remove('active');
+            cartOverlay.classList.remove('active');
+        });
+
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const productItem = button.closest('.collection-item');
+                const sizeOptions = productItem.querySelector('.size-options');
+                const selectedSize = sizeOptions ? sizeOptions.querySelector('.size-option.selected') : null;
+              
+                if (sizeOptions && !selectedSize) {
+                    showNotification('Please select a size before adding to cart', 'error');
+                    return;
+                }
+                
+                const id = button.getAttribute('data-id');
+                const name = button.getAttribute('data-name');
+                const price = parseInt(button.getAttribute('data-price'));
+                const image = button.getAttribute('data-image');
+                const size = selectedSize ? selectedSize.getAttribute('data-size') : 'One Size';
+                
+                const existingItem = cart.find(item => item.id === id && item.size === size);
+                
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({
+                        id,
+                        name,
+                        price,
+                        image,
+                        size,
+                        quantity: 1
+                    });
+                }
+                
+                updateCart();
+                showAddToCartMessage(name);
+            });
+        });
+
+        function updateCart() {
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            cartItems.innerHTML = '';
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="cart-empty">
+                        <i class="fas fa-shopping-bag" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.3;"></i>
+                        <p>Your cart is empty</p>
+                    </div>
+                `;
+            } else {
+                cart.forEach(item => {
+                    const cartItem = document.createElement('div');
+                    cartItem.classList.add('cart-item');
+                    cartItem.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}" class="cart-item-img">
+                        <div class="cart-item-details">
+                            <h4>${item.name}</h4>
+                            <div class="cart-item-size">Size: ${item.size}</div>
+                            <div class="cart-item-price">₦${item.price.toLocaleString()}</div>
+                            <div class="cart-item-quantity">Qty: ${item.quantity}</div>
+                        </div>
+                        <button class="cart-item-remove" data-id="${item.id}" data-size="${item.size}">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    `;
+                    cartItems.appendChild(cartItem);
+                });
+                document.querySelectorAll('.cart-item-remove').forEach(button => {
+                    button.addEventListener('click', () => {
+                        const id = button.getAttribute('data-id');
+                        const size = button.getAttribute('data-size');
+                        removeFromCart(id, size);
+                    });
+                });
+            }
+            
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            totalPrice.textContent = `₦${total.toLocaleString()}`;
+        }
+        function removeFromCart(id, size) {
+            cart = cart.filter(item => !(item.id === id && item.size === size));
+            updateCart();
+        }
+        checkoutBtn.addEventListener('click', () => {
+            if (cart.length === 0) {
+                showNotification('Your cart is empty. Add some items before checking out.', 'error');
+                return;
+            }
+            
+            let message = "Hello ZhalemStyles! I would like to purchase the following items:%0A%0A";
+            
+            cart.forEach((item, index) => {
+                message += `${index + 1}. ${item.name} (Size: ${item.size}) - ₦${item.price.toLocaleString()} x ${item.quantity}%0A`;
+            });
+            
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            message += `%0ATotal: ₦${total.toLocaleString()}%0A%0APlease provide further instructions for completing my order.`;
+            
+            const phoneNumber = "2349060335653";
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+            
+            window.open(whatsappURL, '_blank');
+            cart = [];
+            updateCart();
+            cartModal.classList.remove('active');
+            cartOverlay.classList.remove('active');
+        });
+        function showAddToCartMessage(productName) {
+            showNotification(`"${productName}" added to cart`, 'success');
+        }
+        function showNotification(message, type = 'success') {
+           
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: ${type === 'success' ? 'var(--lv-gold)' : '#ff6b6b'};
+                color: ${type === 'success' ? 'var(--lv-dark)' : 'white'};
+                padding: 18px 25px;
+                z-index: 2000;
+                transform: translateX(120%);
+                transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+                max-width: 350px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+                border-left: 4px solid ${type === 'success' ? 'var(--lv-brown)' : '#d63031'};
+            `;
+            notification.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}" style="font-size: 1.2rem;"></i>
+                    <div>
+                        <strong style="display: block; margin-bottom: 5px; font-size: 0.9rem;">${type === 'success' ? 'Success' : 'Error'}</strong>
+                        <div style="font-size: 0.9rem;">${message}</div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 10);
+            setTimeout(() => {
+                notification.style.transform = 'translateX(120%)';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 500);
+            }, 4000);
+        }
+        const carousel = document.querySelector('.carousel');
+        const carouselSlides = document.querySelectorAll('.carousel-slide');
+        const carouselDots = document.querySelectorAll('.carousel-dot');
+        const prevArrow = document.querySelector('.carousel-arrow.prev');
+        const nextArrow = document.querySelector('.carousel-arrow.next');
+
+        let currentSlide = 0;
+        const slideCount = carouselSlides.length;
+        function initCarousel() {
+            updateCarousel();
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % slideCount;
+                updateCarousel();
+            }, 6000);
+        }
+        function updateCarousel() {
+            carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+            carouselDots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        prevArrow.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+            updateCarousel();
+        });
+
+        nextArrow.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slideCount;
+            updateCarousel();
+        });
+
+        carouselDots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                currentSlide = parseInt(dot.getAttribute('data-slide'));
+                updateCarousel();
+            });
+        });
+
+        initCarousel();
+
+        function initAnimations() {
+            document.querySelectorAll('.collection-item, .featured-card').forEach(item => {
+                item.classList.add('animated');
+            });
+            
+            document.querySelector('.about-img').classList.add('animated');
+            document.querySelector('.about-text').classList.add('animated');
+            document.querySelector('.about-stats').classList.add('animated');
+            document.querySelectorAll('.stagger-animation').forEach(container => {
+                container.classList.add('animated');
+            });
+        }
+
+        function checkAnimations() {
+        }
+
+        const shippingInfo = document.querySelector('.shipping-info');
+        const returnsInfo = document.querySelector('.returns-info');
+        const sizeGuide = document.querySelector('.size-guide');
+        const faqLink = document.querySelector('.faq-link');
+        const privacyPolicy = document.querySelector('.privacy-policy');
+        
+        const shippingModal = document.querySelector('.shipping-modal');
+        const returnsModal = document.querySelector('.returns-modal');
+        const sizeModal = document.querySelector('.size-modal');
+        const faqModal = document.querySelector('.faq-modal');
+        const policyModal = document.querySelector('.policy-modal');
+        
+        const shippingClose = document.querySelector('.shipping-close');
+        const returnsClose = document.querySelector('.returns-close');
+        const sizeClose = document.querySelector('.size-close');
+        const faqClose = document.querySelector('.faq-close');
+        const policyClose = document.querySelector('.policy-close');
+
+        shippingInfo.addEventListener('click', (e) => {
+            e.preventDefault();
+            shippingModal.classList.add('active');
+        });
+
+        shippingClose.addEventListener('click', () => {
+            shippingModal.classList.remove('active');
+        });
+
+        shippingModal.addEventListener('click', (e) => {
+            if (e.target === shippingModal) {
+                shippingModal.classList.remove('active');
+            }
+        });
+
+        returnsInfo.addEventListener('click', (e) => {
+            e.preventDefault();
+            returnsModal.classList.add('active');
+        });
+
+        returnsClose.addEventListener('click', () => {
+            returnsModal.classList.remove('active');
+        });
+
+        returnsModal.addEventListener('click', (e) => {
+            if (e.target === returnsModal) {
+                returnsModal.classList.remove('active');
+            }
+        });
+
+        sizeGuide.addEventListener('click', (e) => {
+            e.preventDefault();
+            sizeModal.classList.add('active');
+        });
+
+        sizeClose.addEventListener('click', () => {
+            sizeModal.classList.remove('active');
+        });
+
+        sizeModal.addEventListener('click', (e) => {
+            if (e.target === sizeModal) {
+                sizeModal.classList.remove('active');
+            }
+        });
+
+        faqLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            faqModal.classList.add('active');
+        });
+
+        faqClose.addEventListener('click', () => {
+            faqModal.classList.remove('active');
+        });
+
+        faqModal.addEventListener('click', (e) => {
+            if (e.target === faqModal) {
+                faqModal.classList.remove('active');
+            }
+        });
+
+        privacyPolicy.addEventListener('click', (e) => {
+            e.preventDefault();
+            policyModal.classList.add('active');
+        });
+
+        policyClose.addEventListener('click', () => {
+            policyModal.classList.remove('active');
+        });
+
+        policyModal.addEventListener('click', (e) => {
+            if (e.target === policyModal) {
+                policyModal.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
