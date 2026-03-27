@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZhalemStyles</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%23906c4a%22%2F%3E%3Ctext%20x%3D%2216%22%20y%3D%2224%22%20font-size%3D%2220%22%20text-anchor%3D%22middle%22%20fill%3D%22%23d4af37%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-weight%3D%22bold%22%3EZ%3C%2Ftext%3E%3C%2Fsvg%3E">
+    <link rel="icon" type="image/svg+xml" href="zhalem-styles-favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -27,6 +27,17 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        /* --- Remove blue outline, add smooth gold focus --- */
+        *:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.5);
+            transition: box-shadow 0.2s ease-in-out;
+        }
+
+        a:focus, button:focus, input:focus, .btn:focus, .category-btn:focus, .size-option:focus, .cart-item-remove:focus {
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.5);
         }
 
         html {
@@ -468,32 +479,16 @@
             align-items: center;
         }
 
-        .nav-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 400;
-            color: var(--lv-dark);
-            letter-spacing: 3px;
-            position: relative;
-        }
-
-        .nav-logo span {
-            color: var(--lv-gold);
-        }
-
-        .nav-logo:after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background-color: var(--lv-gold);
+        /* Logo image styling - maintain large size like original text */
+        .nav-logo img {
+            height: 60px;
+            width: auto;
+            display: block;
             transition: var(--transition);
         }
 
-        .nav-logo:hover:after {
-            width: 100%;
+        .nav-logo img:hover {
+            transform: scale(1.02);
         }
 
         .nav-menu {
@@ -599,7 +594,6 @@
 
         .search-input:focus {
             border-color: var(--lv-gold);
-            outline: none;
         }
 
         .search-results {
@@ -1819,8 +1813,8 @@
                 padding: 0 15px;
             }
             
-            .nav-logo {
-                font-size: 1.5rem;
+            .nav-logo img {
+                height: 50px;
             }
             
             .footer {
@@ -1878,8 +1872,7 @@
                 <span>Total:</span>
                 <span class="total-price">₦0</span>
             </div>
-      <button class="checkout-btn">Proceed to checkout via <i class="fab fa-whatsapp" style="color: white; font-size: 1.1rem; margin-left: 8px;"></i></button>
-           
+            <button class="checkout-btn">Proceed to checkout via <i class="fab fa-whatsapp" style="color: white; font-size: 1.1rem; margin-left: 8px;"></i></button>
         </div>
     </div>
 
@@ -2053,7 +2046,9 @@
 
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="nav-logo">Zhalem<span>Styles</span></a>
+            <a href="#" class="nav-logo">
+                <img src="zhalem-styles.png" alt="ZhalemStyles Logo">
+            </a>
             
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
@@ -3261,6 +3256,33 @@
     </footer>
 
     <script>
+        // --- Prevent view source / dev tools ---
+        (function() {
+            // Disable right-click
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                return false;
+            });
+
+            // Disable common shortcuts
+            document.addEventListener('keydown', function(e) {
+                // Ctrl+U, Ctrl+Shift+I, F12, Ctrl+Shift+J, Ctrl+Shift+C, Ctrl+S
+                if (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S')) {
+                    e.preventDefault();
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) {
+                    e.preventDefault();
+                    return false;
+                }
+                if (e.key === 'F12') {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+        })();
+
+        // --- Original JavaScript (unchanged except for the added above) ---
         window.addEventListener('load', function() {
             const loadingScreen = document.querySelector('.loading-screen');
             setTimeout(() => {
@@ -3495,14 +3517,13 @@
         const cartModal = document.querySelector('.cart-modal');
         const cartOverlay = document.querySelector('.cart-overlay');
         const closeCart = document.querySelector('.close-cart');
-        const cartItems = document.querySelector('.cart-items');
+        const cartItemsEl = document.querySelector('.cart-items');
         const cartCount = document.querySelector('.cart-count');
         const totalPrice = document.querySelector('.total-price');
         const checkoutBtn = document.querySelector('.checkout-btn');
         const addToCartButtons = document.querySelectorAll('.add-to-cart');
 
         let cart = [];
-
 
         cartIcon.addEventListener('click', (e) => {
             e.preventDefault();
@@ -3560,10 +3581,10 @@
         function updateCart() {
             const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
             cartCount.textContent = totalItems;
-            cartItems.innerHTML = '';
+            cartItemsEl.innerHTML = '';
             
             if (cart.length === 0) {
-                cartItems.innerHTML = `
+                cartItemsEl.innerHTML = `
                     <div class="cart-empty">
                         <i class="fas fa-shopping-bag" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.3;"></i>
                         <p>Your cart is empty</p>
@@ -3585,7 +3606,7 @@
                             <i class="fas fa-times"></i>
                         </button>
                     `;
-                    cartItems.appendChild(cartItem);
+                    cartItemsEl.appendChild(cartItem);
                 });
                 document.querySelectorAll('.cart-item-remove').forEach(button => {
                     button.addEventListener('click', () => {
@@ -3631,7 +3652,6 @@
             showNotification(`"${productName}" added to cart`, 'success');
         }
         function showNotification(message, type = 'success') {
-           
             const notification = document.createElement('div');
             notification.style.cssText = `
                 position: fixed;
@@ -3823,5 +3843,4 @@
         });
     </script>
 </body>
-
 </html>
